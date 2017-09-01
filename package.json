@@ -1,0 +1,28 @@
+{
+  "name": "helper-tools",
+  "version": "0.1.0",
+  "description": "Helper tools for frontend development.",
+  "main": "index.js",
+  "scripts": {
+    "build:app": "node node_modules/webpack/bin/webpack.js --config ./src/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "helper",
+    "tools",
+    "helper",
+    "validation"
+  ],
+  "author": "Xavier Felipe Medina <medina.xavier.felipe@gmai.com>",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "webpack": "^3.5.5"
+  }
+}
