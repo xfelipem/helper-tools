@@ -1,6 +1,5 @@
 import { _forEach } from './object';
 
-
 export const validateField = function (el) {
     //console.log('validateField');
     const value = el.value;
