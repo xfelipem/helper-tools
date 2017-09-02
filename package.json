@@ -1,11 +1,16 @@
 {
   "name": "helper-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Muramasah/helper-tools"
+  },
   "description": "Helper tools for frontend development.",
   "main": "index.js",
   "scripts": {
     "build:app": "node node_modules/webpack/bin/webpack.js --config ./src/webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:test": "node node_modules/webpack/bin/webpack.js --config ./src/test/webpack.config.js",
+    "test": "yarn build:test && ./node_modules/.bin/mocha --compilers js:babel-core/register"
   },
   "keywords": [
     "helper",
@@ -15,14 +20,21 @@
   ],
   "author": "Xavier Felipe Medina <medina.xavier.felipe@gmai.com>",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "chai-virtual-dom": "^1.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
+    "mocha": "^3.5.0",
+    "virtual-dom": "^2.1.1",
     "webpack": "^3.5.5"
   }
 }

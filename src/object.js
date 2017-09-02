@@ -1,4 +1,4 @@
-export const _forEach = function (object, method) {
+export const forEach = function (object, method) {
     Object.keys(object).forEach(function (key) {
         let parameter = object[key];
 
@@ -7,3 +7,9 @@ export const _forEach = function (object, method) {
 
     return object;
 }
+
+const object = {
+    forEach
+};
+
+export default object;
