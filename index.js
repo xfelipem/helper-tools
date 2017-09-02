@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,18 +73,21 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+var forEach = exports.forEach = function forEach(object, method) {
+    Object.keys(object).forEach(function (key) {
+        var parameter = object[key];
 
-var _validation = __webpack_require__(1);
+        method(parameter, key, object);
+    });
 
-var _validation2 = _interopRequireDefault(_validation);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var helperTools = {
-    validation: _validation2.default
+    return object;
 };
 
-exports.default = helperTools;
+var object = {
+    forEach: forEach
+};
+
+exports.default = object;
 
 /***/ }),
 /* 1 */
@@ -96,11 +99,79 @@ exports.default = helperTools;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+var bindThisToMethods = exports.bindThisToMethods = function bindThisToMethods(methods, self) {
+    return methods.map(function (method) {
+        return method.bind(self);
+    });
+};
+
+var executeIf = exports.executeIf = function executeIf(condition, method, args, self) {
+    if (condition) {
+        method.apply(self || method, args)();
+    }
+};
+
+var executeIfElse = exports.executeIfElse = function executeIfElse(condition, method_1, args_1, self_1, method_2, args_2, self_2) {
+    if (condition) {
+        method_1.apply(self_1 || method_1, args_1)();
+    } else {
+        method_2.apply(self_2 || method_2, args_2)();
+    }
+};
+
+var method = {
+    bindThisToMethods: bindThisToMethods,
+    executeIf: executeIf,
+    executeIfElse: executeIfElse
+};
+
+exports.default = method;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.object = exports.method = exports.validation = undefined;
+
+var _validation = __webpack_require__(3);
+
+var _method = __webpack_require__(1);
+
+var _object = __webpack_require__(0);
+
+var validation = exports.validation = _validation.validation;
+var method = exports.method = _method.method;
+var object = exports.object = _object.object;
+
+var helperTools = {
+    validation: validation,
+    method: method,
+    object: object
+};
+
+exports.default = helperTools;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 exports.areStringsEqual = exports.isPhoneNumberValid = exports.isNotEmpty = exports.testRegex = exports.areStringsEqualAndNonEmpty = exports.isPasswordValid = exports.isEmailValid = exports.areFormFieldsValid = exports.validateField = undefined;
 
-var _object = __webpack_require__(2);
+var _object = __webpack_require__(0);
 
-var _method = __webpack_require__(3);
+var _method = __webpack_require__(1);
 
 var validateField = exports.validateField = function validateField(el) {
     //console.log('validateField');
@@ -173,70 +244,6 @@ var validation = {
 };
 
 exports.default = validation;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var forEach = exports.forEach = function forEach(object, method) {
-    Object.keys(object).forEach(function (key) {
-        var parameter = object[key];
-
-        method(parameter, key, object);
-    });
-
-    return object;
-};
-
-var object = {
-    forEach: forEach
-};
-
-exports.default = object;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var bindThisToMethods = exports.bindThisToMethods = function bindThisToMethods(methods, self) {
-    return methods.map(function (method) {
-        return method.bind(self);
-    });
-};
-
-var executeIf = exports.executeIf = function executeIf(condition, method, args, self) {
-    if (condition) {
-        method.apply(self || method, args)();
-    }
-};
-
-var executeIfElse = exports.executeIfElse = function executeIfElse(condition, method_1, args_1, self_1, method_2, args_2, self_2) {
-    if (condition) {
-        method_1.apply(self_1 || method_1, args_1)();
-    } else {
-        method_2.apply(self_2 || method_2, args_2)();
-    }
-};
-
-var method = {
-    bindThisToMethods: bindThisToMethods,
-    executeIf: executeIf,
-    executeIfElse: executeIfElse
-};
-
-exports.default = method;
 
 /***/ })
 /******/ ]);
