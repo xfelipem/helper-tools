@@ -58,7 +58,7 @@
   import { forEach } from 'helper-tools/src/object';
   import { addClass } from 'helper-tools/src/dom';
 
-  const domElements = document.getElementsByClassName('item');
+  let domElements = document.getElementsByClassName('item');
 
   forEach(domElements, (domEl) => {
      addClass(domEl, 'border green');
