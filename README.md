@@ -6,7 +6,7 @@
 
 ## Instalación
 
- Se puede instalar mediante npm install 'helper-tools' o yarn add 'helper-tools'. También se puede incluir el archivo ./index.js en el explorador:
+ Se puede instalar mediante `npm install helper-tools` o `yarn add 'helper-tools'`. También se puede incluir el archivo ./index.js en el explorador:
 
  ```html
  <script src="/path/to/helper-tools/index.js"></script>
