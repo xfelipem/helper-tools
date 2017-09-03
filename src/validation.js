@@ -31,13 +31,18 @@ export const areStringsEqual = function (str1, srt2) {
     return srt1 === srt2;
 }
 
+export const isNotNaN = function (number) {
+    return !isNaN(number);
+}
+
 const validation = {
     isEmailValid,
     isPasswordValid,
     areStringsEqualAndNonEmpty,
     testRegex,
     isNotEmpty,
-    isPhoneNumberValid
+    isPhoneNumberValid,
+    isNotNaN
 };
 
 export default validation;
