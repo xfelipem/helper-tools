@@ -10,6 +10,7 @@ module.exports = {
     devServer: {
         historyApiFallback: false
     },
+    devtool: 'env',
     module: {
         rules: [
             {
