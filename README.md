@@ -29,8 +29,7 @@
   const name = '';
   
   console.log(helperTools.validate.isNotEmpty(name)); //false
-
-  ```
+  ```
 
  Si utilizan ES6 pueden incluir por módulo:
 
