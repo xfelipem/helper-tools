@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/Muramasah/helper-tools"
   },
-  "description": "Helper tools for frontend development.",
+  "description": "Helper tools for agnostic development.",
   "main": "index.js",
   "scripts": {
     "build:app": "node node_modules/webpack/bin/webpack.js --config ./src/webpack.config.js",
@@ -15,8 +15,10 @@
   "keywords": [
     "helper",
     "tools",
-    "helper",
-    "validation"
+    "validation",
+    "form",
+    "object",
+    "methods"
   ],
   "author": "Xavier Felipe Medina <medina.xavier.felipe@gmai.com>",
   "license": "ISC",
