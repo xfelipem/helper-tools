@@ -40,7 +40,8 @@ module.exports = {
                 //NODE_ENV: JSON.stringify("development")
                 NODE_ENV: JSON.stringify('production')
             }
-        })
+        }),
+        new webpack.optimize.UglifyJsPlugin()
     ]
 };
 
