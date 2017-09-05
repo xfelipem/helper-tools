@@ -8,7 +8,10 @@ export const isEmailValid = function (email) {
 }
 
 export const isPasswordValid = function (password, rePassword) {
-    executeIfElse(rePassword, areStringsEqualAndNonEmpty, [password, rePassword], this, isNotEmpty, password, this);
+    executeIfElse(
+        rePassword,
+        areStringsEqualAndNonEmpty, [password, rePassword], this,
+        isNotEmpty, [password], this);
 }
 
 export const areStringsEqualAndNonEmpty = function (str_1, str_2) {

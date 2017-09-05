@@ -10,9 +10,9 @@ export const executeIf = function (condition, method, args, self) {
 
 export const executeIfElse = function (condition, method_1, args_1, self_1, method_2, args_2, self_2) {
     if (condition) {
-        method_1.apply(self_1 || method_1, args_1)();
+        return method_1.apply(self_1 || method_1 || [], args_1)();
     } else {
-        method_2.apply(self_2 || method_2, args_2)();
+        return method_2.apply(self_2 || method_2 || [], args_2)();
     }
 };
 
