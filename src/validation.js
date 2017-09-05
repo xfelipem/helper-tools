@@ -1,5 +1,4 @@
 import { forEach } from './object';
-import { executeIfElse } from './method';
 
 
 //DATA VALIDATION
@@ -8,10 +7,11 @@ export const isEmailValid = function (email) {
 }
 
 export const isPasswordValid = function (password, rePassword) {
-    executeIfElse(
-        rePassword,
-        areStringsEqualAndNonEmpty, [password, rePassword], this,
-        isNotEmpty, [password], this);
+    if (rePassword) {
+        return areStringsEqualAndNonEmpty(password, rePassword);
+    } else {
+        return isNotEmpty(password);
+    }
 }
 
 export const areStringsEqualAndNonEmpty = function (str_1, str_2) {
