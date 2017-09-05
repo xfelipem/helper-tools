@@ -80,8 +80,6 @@
  Recibe un array de funciones y les agrega como referencia interna (this) el objeto dado.
  #### executeIf
  Si se cumple la condicin dada ejecuta la función pasada.
- #### executeIfElse
- Si se cumple la condicin dada ejecuta la función pasada sino ejecuta la segunda función dada.
 
 ### Object
  `object.js` contiene metodos para facilitar el manejo de objetos.
@@ -104,3 +102,12 @@
  #### isPhoneNumberValid
  Valida si es un teléfono valido:
  TODO: Agregar distintos tipos de formato.
+
+## To-Do
+* dom.js
+    * Agregar métodos que remplazan el uso de jQuery.
+* form.js
+    * Completar methodos de flow de registro.
+* Documentación
+    * Documentar cada método.
+    * Traducción al inglés.
