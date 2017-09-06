@@ -30,7 +30,7 @@ export const isPhoneNumberValid = function (number) {
     return testRegex(/^-?\d+\.?\d*$/, number);
 }
 
-export const areStringsEqual = function (str1, srt2) {
+export const areStringsEqual = function (srt1, srt2) {
     return srt1 === srt2;
 }
 
