@@ -1,3 +1,5 @@
+import { forEach } from './object';
+
 export const urlHasParameter = function (parameter) {
     const urlPath = getUrlPath();
     let hasParameter;
