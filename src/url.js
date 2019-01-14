@@ -1,4 +1,4 @@
-import { forEach } from './object';
+import { forEach } from 'lodash';
 
 export const urlHasParameter = function (parameter) {
     const urlPath = getUrlPath();

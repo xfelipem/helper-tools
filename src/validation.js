@@ -1,4 +1,4 @@
-import { forEach } from './object';
+import { forEach } from 'lodash';
 
 
 //DATA VALIDATION

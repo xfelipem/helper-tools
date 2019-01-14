@@ -1,4 +1,4 @@
-import { forEach } from './object';
+import { forEach } from 'lodash';
 import { executeIf } from './method';
 
 export const validateField = function (el) {
